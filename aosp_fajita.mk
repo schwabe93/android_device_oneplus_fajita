@@ -21,14 +21,24 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from fajita device
 $(call inherit-product, device/oneplus/fajita/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+TARGET_BOOT_ANIMATION_RES := 1440
 
-PRODUCT_NAME := lineage_fajita
+# Inherit some common PixelExperience stuff.
+$(call inherit-product, vendor/aosp/config/common.mk)
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME="OnePlus 6T" \
+    DEVICE_MAINTAINERS="Alexander Gemsa (schwabe93)"
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.disable_hwcomposer=true
+
+
+PRODUCT_NAME := aosp_fajita
 PRODUCT_DEVICE := fajita
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
-PRODUCT_MODEL := ONEPLUS A6013
+PRODUCT_MODEL := ONEPLUS 6T
 
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 
