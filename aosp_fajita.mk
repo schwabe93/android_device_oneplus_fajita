@@ -24,6 +24,8 @@ $(call inherit-product, device/oneplus/fajita/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/aosp/config/common.mk)
 
+TARGET_BOOT_ANIMATION_RES := 1440
+
 PRODUCT_NAME := aosp_fajita
 PRODUCT_DEVICE := fajita
 PRODUCT_MANUFACTURER := OnePlus
